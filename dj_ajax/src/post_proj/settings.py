@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'profiles',
  
     # third party apps 
-    'crispy_forms'
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
