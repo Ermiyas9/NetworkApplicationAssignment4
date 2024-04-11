@@ -8,5 +8,5 @@ def post_list_and_create(request):
     return render(request,'posts/main.html', {'qs':qs})
 
 def hello_world_view(request):
-    return JsonResponse({'text': 'hello world'})
+    return JsonResponse({'text': 'hello world x2'})
     
