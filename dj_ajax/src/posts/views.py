@@ -78,3 +78,12 @@ def update_post(request, pk):
     return redirect('posts:main-board')
 
 
+def delete_post(request, pk):
+    obj = Post.objects.get(pk=pk)
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        obj.delete()
+        return JsonResponse({'msg' : 'some message'})
+    #return JsonResponse({'msg': 'access denied - ajax only'})
+    return redirect('posts:main-board')
+
+
