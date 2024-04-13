@@ -62,3 +62,29 @@ $.ajax({
         console.log(error)
     }
 })
+
+updateForm.addEventListener('submit', e=> {
+    e.preventDefault()
+
+    const title = document.getElementById('title')
+    const body = document.getElementById('body')
+
+    $.ajax({
+        type: 'POST',
+        url: updateUrl,
+        data: {
+           'csrfmiddlewaretoken': csrf[0].value,
+           'title': titleInput.value,
+           'body': bodyInput.value,
+        },
+        success: function(response){
+            console.log(response)
+            handleAlerts('success', 'post has been updated')
+            title.textContent = response.title
+            body.textContent = response.body
+        },
+        error: function(error){
+            console.log(error)
+        }
+    })
+})
