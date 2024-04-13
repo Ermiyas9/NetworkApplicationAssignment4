@@ -73,7 +73,7 @@ const getData=()=> {
                     <div class="card mb-2">
                         <div class="card-body">
                             <h5 class="card-title">${el.title}</h5>
-                            <p class="card-text">${el.body}</p>
+                            <p class="card-tdext">${el.body}</p>
                         </div>
     
                         <div class="card-footer">
