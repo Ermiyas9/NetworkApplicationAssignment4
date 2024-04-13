@@ -117,24 +117,24 @@ loadBtn.addEventListener('click', ()=>{
 })
 
 
-postForm.addEventListener('submit', e=> {
-    e.preventDefault()
+postForm.addEventListener('submit', e => {
+    e.preventDefault();
 
     $.ajax({
         type: 'POST',
         url: '',
         data: {
-            'csrfmiddlewaretoken': csrf[0],value, 
+            'csrfmiddlewaretoken': csrf.value,
             'title': title.value,
             'body': body.value
         },
-        success: function(response){
-            console.log(response)
+        success: function(response) {
+            console.log(response);
         },
-        error: function(error){
-            console.log(error)
+        error: function(error) {
+            console.log(error);
         }
-    })
-})
+    });
+});
 
 getData()
