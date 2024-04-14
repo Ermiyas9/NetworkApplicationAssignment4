@@ -6,6 +6,8 @@ const spinnerBox = document.getElementById('spinner-box')
 const loadBtn = document.getElementById('load-btn')
 const endBox = document.getElementById('end-box')
 const postForm = document.getElementById('post-form')
+
+
 const title = document.getElementById('id_title')
 const body = document.getElementById('id_body')
 const csrf = document.getElementsByName('csrfmiddlewaretoken')
@@ -18,7 +20,7 @@ const closeBtns = [...document.getElementsByClassName('add-modal-close')]
 
 const getCookie = (name) => {
     let cookieValue = null;
-    
+
     if (document.cookie && document.cookie !== '') {
         const cookies = document.cookie.split(';');
         for (let i = 0; i < cookies.length; i++) {

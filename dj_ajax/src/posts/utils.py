@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 
 def action_permission(func):
+    
     def wrapper(request, **kwargs):
         pk = kwargs.get('pk')
         profile = Profile.objects.get(user=request.user)
@@ -12,7 +13,7 @@ def action_permission(func):
             print('yes')
             return func(request, **kwargs)
         else:
+            
             print('no')
-            #return HttpResponse('access denied - you need to be the autor of the post in order to delete its')
             return redirect('posts:main-board')
     return wrapper
