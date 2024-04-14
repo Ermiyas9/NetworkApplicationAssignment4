@@ -5,6 +5,7 @@ from .forms import PostForm
 from profiles.models import Profile
 from .utils import action_permission
 from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 @login_required
@@ -24,8 +25,12 @@ def post_list_and_create(request):
                 'author' : instance.author.user.username,
                 'id': instance.id,
             })
+            
+    # Fetch all existing posts
+    posts = Post.objects.all()
     context = {
         'form': form,
+        'posts': posts,  # Pass posts to the template
 
     }
     return render(request, 'posts/main.html', context)

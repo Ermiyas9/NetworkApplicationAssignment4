@@ -7,8 +7,10 @@ from .views import (
     post_detail_data_view,
     delete_post,
     update_post,
-    image_upload_view
+    image_upload_view,
+    post_detail
 )
+from posts import views
 
 app_name = 'posts'
 
@@ -21,5 +23,7 @@ urlpatterns = [
     path('<pk>/delete/', delete_post, name='post-delete'),
     path('data/<int:num_posts>/', load_post_data_view,name='posts-data'),
     path('<pk>/data/',post_detail_data_view,name='post-detail-data'),
+    path('post/<int:pk>/', views.post_detail, name='post_detail')
+
     
 ]
